@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>刷个蓝包，玩转新年好运!费森尤斯新年定制惊喜坐等你撩！</title>
+
+  <!-- <script src="./node_modules/amfe-flexible/index.js"></script> -->
+  <meta http-equiv="Cache-Control" name="no-store" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <!-- <script src="./static/lib/js/flexible.js"></script> -->
+  <!-- <link rel="stylesheet" href="./static/lib/css/flexible.css">  -->
+  <link rel="stylesheet" href="./static/lib/css/base.css">
+  <!--<script src="./static/lib/js/jquery-2.1.4.js"></script>-->
+  <script src="./static/lib/js/jquery-2.2.4.min.js"></script>
+  <script src="./static/lib/js/dt_wechatAuth.js"></script>
+<script>
+	
+	   var wechatAuth = new WECHATAUTH('http://fmcc1803.dwechat.com');
+			wechatAuth.onReady(function(res) {
+				console.log("%c res", "color: pink", res);
+			})
+</script>
+<!--  <script src="./src/components/global.js"></script> -->
+    
+<style>
+	#homeLoading {
+		/*background: url(http://fmcc1912.dwechat.com/H5/release/imgs/p5/bg.png)no-repeat;
+		background-size: cover;*/
+		background: url(http://fmcc1912.dwechat.com/H5/release/imgs/p5/load1.png) no-repeat;
+		background-size: 100% 100%;
+		/*background: rgb(15,15,78);*/
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #fff;
+		height: 100%;
+		width: 100%;
+		z-index: 1100;
+	}
+	.load{
+		position: absolute;
+    height: 2.6rem;
+    width: 2.6rem;
+    top: 28%;
+    left: 51%;
+    margin-top: -1.3rem;
+    margin-left: -1.3rem;
+		
+	}
+	.loadP{
+		
+		position: absolute;
+    width: 3.5rem;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+    font-size: 18px;
+		text-align: center;
+	}
+</style>
+</head>
+
+<body onbeforeunload="checkLeave()">
+  <div id="app"></div>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script> 
+  <script src="./static/lib/js/share.js"></script>
+  <script>
+//  var _this = this;
+//  var wechatAuth = new WECHATAUTH('http://leop1800wechat.dwechat.com');
+//      wechatAuth.onReady(function (res) {
+//        console.log('res',res.Data);
+//      })
+    //分享
+function checkLeave() {
+    		console.log("refreshed");
+    		//window.location.href.split("#")[0]
+			window.location.href = "http://fmcc1912.dwechat.com/h5/release/index.html";
+	};
+
+    var wechatShare = new _SHARE();
+    var prizeName = window.localStorage.getItem('prizeName2') || "";
+//		var prizeName= "小熊";
+    if(prizeName == ""){
+  	var prizeNames = "这个新年有新玩法!";
+    }else{
+    	var prizeNames = "我在刷蓝包时获得费森尤斯定制"+prizeName;
+    }
+    wechatShare.registerFunc('commonShare', function () {
+      wx.onMenuShareAppMessage({
+        title: '刷个蓝包，玩转新年好运！费森尤斯新年定制惊喜坐等你撩！', // 分享标题
+        desc: prizeNames, // 分享描述
+        link: "http://fmcc1912.dwechat.com/h5/release/index.html", // 分享链接
+        imgUrl: "http://fmcc1912.dwechat.com/H5/release/imgs/p1/fenxiang.jpg", // 分享图标
+        success: function () {
+					console.log(prizeNames);
+        }
+      });
+      wx.onMenuShareTimeline({
+        title: '刷个蓝包，玩转新年好运！费森尤斯新年定制惊喜坐等你撩！', // 分享标题
+        link: "http://fmcc1912.dwechat.com/h5/release/index.html", // 分享链接
+        imgUrl: "http://fmcc1912.dwechat.com/H5/release/imgs/p1/fenxiang.jpg", // 分享图标
+        success: function () {
+
+        }
+      });
+    })
+    wechatShare.onReady(function () {
+      wechatShare.invokeFunc('commonShare')();
+	    })
+			
+  </script>
+  <!-- //digitiger1百度统计 -->
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        //FMCC1910蓝包抽奖统计代码
+        hm.src = "https://hm.baidu.com/hm.js?c0ac4c1b47dd53dc0b43eccf220808bc";
+         //FMCC1912透亮人生——蓝包抽奖统计代码
+        hm.src = "https://hm.baidu.com/hm.js?8641f2f6c26798ffa7089b8dd594da3d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+      
+      
+
+
+  <!-- built files will be auto injected -->
+  
+  
+  	<div id="homeLoading">
+					<img class="load" src="http://fmcc1912.dwechat.com/H5/release/imgs/p5/loading3.gif"/>
+					<div class="loadP">好运正在加载中 0%</div>
+		</div>
+  <script src="./static/lib/js/amfe-flexible.min.js"></script>
+  <script src="./static/lib/js/TweenMax.min.js"></script>
+  
+  <script src="./static/lib/js/html2canvas.min.js"></script>
+</body>
+
+</html>
